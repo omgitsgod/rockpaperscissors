@@ -1,58 +1,23 @@
-<script>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors!</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+  <div id="action">
+    <img src="images/rock.png" id="rock">
+    <img src="images/paper.png" id="paper">
+    <img src="images/scissors.png" id="scissors">
 
-function computerPlay() {
-  pc = Math.random()
-  if (pc > .6) {
-    return "Rock"
-  } else if (pc > .3) {
-    return "Paper"
-  } else {
-    return "Scissors"
-  }
-}
-
-function userSelection() {
-  choice = prompt("Rock Paper Scissors?")
-  return choice.toLowerCase()
-}
-
-function playRound(playerSelection, computerSelection) {
-
-
-  if (playerSelection === computerSelection) {
-    alert(`You both chose ${playerSelection}. Tie! Round ${round} layer: ${playerScore} Computer: ${computerScore}`)
-  }  else if (
-      playerSelection==="rock" && computerSelection==="scissors" ||
-      playerSelection==="paper" && computerSelection==="rock" ||
-      playerSelection==="scissors" && computerSelection==="paper") {
-
-        playerScore += 1;
-        alert(`You Win: ${playerSelection} beats ${computerSelection}! Round ${round} Player: ${playerScore} Computer: ${computerScore}`)
-      }
-      else {
-        computerScore += 1;
-        alert(`YOU LOSE! ${computerSelection} beats ${playerSelection}! Round: ${round} Player: ${playerScore} Computer: ${computerScore}`)
-      }
-      round +=1
-    }
-
-      let computerScore=0
-      let playerScore=0
-      let round = 1
-function game() {
-
-  computerSelection = computerPlay().toLowerCase()
-
-  let round;
-for (round = 1; round < 6; round++) {
-
-  playRound(userSelection(), computerSelection)}
-
-console.log(`Player: ${playerScore} vs Computer: ${computerScore}`)
-if (playerScore > computerScore) {
-  console.log("You win!")
-} else if (computerScore > playerScore) { console.log("You lose!")
-} else {console.log("TIED!") }
-
-}
-</script>
+    <div id="textstuff">
+    <button id="reset">reset</button>
+    <div id="playerscore"></div>
+    <div id="computerscore"></div>
+    <div id="round"> </div>
+    <div id="result"></div>
+  </div>
+  <script src="script.js"></script>
+  </body>
+</html>
